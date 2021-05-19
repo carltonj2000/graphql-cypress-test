@@ -37,6 +37,30 @@ export default function Games() {
     return null;
   }
 
-  console.log(data);
-  return <div>Games</div>;
+  return (
+    <div className="flex flex-col items-center">
+      <label htmlFor="date">Show games for: </label>
+      <input
+        type="date"
+        value={date}
+        id="date"
+        onChange={(e) => dateSet(e.target.value)}
+        className="border-2 border-gray-500 p-2"
+      />
+      {data.allGames.map((game) => (
+        <div key={game.id} className="flex flex-col items-center">
+          <p className="mt-4">
+            <Link to={`teams/${game.home_team.id}`}>
+              {game.home_team.name}, {game.home_team.city}{" "}
+            </Link>
+            {game.home_team_score || ""} vs {game.visitor_team_score || ""}{" "}
+            <Link to={`teams/${game.visitor_team.id}`}>
+              {game.visitor_team.city} {game.visitor_team.name}
+            </Link>
+          </p>
+          <p>{game.status}</p>
+        </div>
+      ))}
+    </div>
+  );
 }

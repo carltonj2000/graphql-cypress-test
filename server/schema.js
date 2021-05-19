@@ -78,7 +78,6 @@ const RootQuery = new GraphQLObjectType({
             `https://www.balldontlie.io/api/v1/games?start_date=${args.date}&end_date=${args.date}`
           );
           const data = await response;
-          console.log(data.data);
           return data.data.data;
         } catch {
           throw "fetching games failed";

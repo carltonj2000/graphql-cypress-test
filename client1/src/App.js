@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import logo from "./Logo-NBA.png";
 import Games from "./components/Games";
+import Team from "./components/Team";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql",
@@ -12,12 +13,15 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider {...{ client }}>
-      <div>
-        <div className="text-lg font-bold m-1 p-1 bg-indigo-100 shadow">
-          <p>Home</p>
+      <Router>
+        <div className="flex flex-col justify-center items-center h-full">
+          <div className="flex flex-col justify-center mb-8">
+            <img src={logo} alt="NBA Logo" className="h-20" />
+          </div>
+          <Route exact path="/" component={Games} />
+          <Route path="/teams/:id" component={Team} />
         </div>
-        <Games />
-      </div>
+      </Router>
     </ApolloProvider>
   );
 }

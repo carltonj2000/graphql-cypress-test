@@ -6,7 +6,7 @@
   "scripts": {
     "server": "npm start --prefix server",
     "client1": "npm start --prefix client1",
-    "client1:wait": "wait-on tcp:6000 && npm run client1",
+    "client1:wait": "wait-on tcp:5000 && npm run client1",
     "dev": "concurrently \"npm run server\" \"npm run client1:wait\""
   },
   "keywords": [],
