@@ -27,7 +27,6 @@ export default function Team(props) {
     return null;
   }
 
-  console.log(data);
   const { name, city, conference, division } = data.team;
   return (
     <div className="flex flex-col items-center">

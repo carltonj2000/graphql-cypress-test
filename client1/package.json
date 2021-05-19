@@ -21,7 +21,10 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "cypress open",
+    "test:vid": "cypress run",
+    "test:qa": "cypress open --config-file ./cypress.staging.json",
+    "test:old": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,7 +46,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.6",
     "autoprefixer": "^9.8.6",
+    "cypress": "^7.3.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   }

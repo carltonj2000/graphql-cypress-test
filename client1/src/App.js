@@ -14,7 +14,10 @@ function App() {
   return (
     <ApolloProvider {...{ client }}>
       <Router>
-        <div className="flex flex-col justify-center items-center h-full">
+        <div
+          className="flex flex-col justify-center items-center h-full"
+          id="container"
+        >
           <div className="flex flex-col justify-center mb-8">
             <img src={logo} alt="NBA Logo" className="h-20" />
           </div>

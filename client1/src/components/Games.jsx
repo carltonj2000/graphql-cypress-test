@@ -47,7 +47,7 @@ export default function Games() {
         onChange={(e) => dateSet(e.target.value)}
         className="border-2 border-gray-500 p-2"
       />
-      {data.allGames.map((game) => (
+      {data?.allGames.map((game) => (
         <div key={game.id} className="flex flex-col items-center">
           <p className="mt-4">
             <Link to={`teams/${game.home_team.id}`}>
